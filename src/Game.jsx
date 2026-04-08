@@ -240,7 +240,7 @@ export default function Game() {
 
       <div style={{display:"flex",gap:20}}>
         {/* REGIONS 2x2 */}
-        <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:14,width:380,flexShrink:0,alignSelf:"start"}}>
+        <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:14,width:564,flexShrink:0,alignSelf:"start"}}>
           {[0,1,2,3].map(z=>{
             const isP=z===me.region;
             const isTradePartner=phase==="TRADE"&&tp!==null&&tp>=0&&rs[tp].region===z;
@@ -249,7 +249,7 @@ export default function Game() {
             const cp=mk&&mk[z].ci<mk[z].cons.length?mk[z].cons[mk[z].ci]:null;
             const rc=REGION_COLORS[z];
             return (
-              <div key={z} style={{width:183,height:183,borderRadius:"50%",
+              <div key={z} style={{width:275,height:275,borderRadius:"50%",
                 border:isP?`5px solid ${rc}`:isTradePartner?`3px solid ${rc}`:`2px solid ${rc}60`,
                 outline:isP?`3px solid ${rc}40`:"none",outlineOffset:4,
                 background:isP?`radial-gradient(circle at center, ${rc}25 0%, ${rc}08 70%, #0d0d0d 100%)`:isTradePartner?`${rc}15`:"#0d0d0d",
